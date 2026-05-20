@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UpDog — Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.7;
+    }
+    h1 { font-size: 2rem; margin-bottom: 4px; }
+    h2 { font-size: 1.2rem; margin-top: 36px; color: #58a6ff; }
+    p, li { color: #c9d1d9; }
+    ul { padding-left: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      font-size: 0.95rem;
+    }
+    th { background: #161b22; color: #e6edf3; }
+    .subtitle { color: #8b949e; font-size: 0.95rem; margin-bottom: 32px; }
+    a { color: #58a6ff; }
+    hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy — UpDog</h1>
+  <p class="subtitle">Last updated: May 2026</p>
+
+  <p>UpDog is a Gmail Add-on that analyzes emails for phishing and malware indicators. This policy explains what data leaves your device during analysis and why.</p>
+
+  <hr>
+
+  <h2>What UpDog does with your email</h2>
+  <p>When you open an email, UpDog reads it using the Gmail API and sends it to a private backend for analysis. The backend runs entirely in memory — <strong>no email content, subject lines, body text, or attachment content is ever written to disk or stored in any database.</strong></p>
+  <p>Once the analysis is complete, the backend returns a score and a list of findings. Nothing is retained.</p>
+
+  <hr>
+
+  <h2>Data sent to third-party services</h2>
+  <p>To perform its analysis, UpDog sends limited, targeted data to the following external services:</p>
+
+  <h2>Google Safe Browsing API</h2>
+  <ul>
+    <li><strong>What is sent:</strong> URLs extracted from the email body</li>
+    <li><strong>Why:</strong> To check whether any link in the email is a known phishing or malware URL</li>
+    <li><strong>Note:</strong> URLs may contain personal tokens (e.g. <code>unsubscribe?user=...</code>). Only the URL strings themselves are sent — no email body, sender, or subject.</li>
+    <li><a href="https://policies.google.com/privacy">Google's privacy policy</a></li>
+  </ul>
+
+  <h2>RDAP (domain registries)</h2>
+  <ul>
+    <li><strong>What is sent:</strong> The sender's domain name (e.g. <code>example.com</code>)</li>
+    <li><strong>Why:</strong> To check how recently the domain was registered — newly registered domains are a common phishing signal</li>
+    <li><strong>Note:</strong> Queries go directly to the authoritative registry for the domain's TLD. No email content is sent.</li>
+  </ul>
+
+  <h2>HaveIBeenPwned</h2>
+  <ul>
+    <li><strong>What is sent:</strong> The sender's domain name</li>
+    <li><strong>Why:</strong> To check whether the sender's domain has been involved in a known data breach</li>
+    <li><strong>Note:</strong> This is a read-only lookup. No email content is sent.</li>
+  </ul>
+
+  <h2>HaveIBeenPwned (user-initiated only)</h2>
+  <ul>
+    <li><strong>What is sent:</strong> Your Gmail address</li>
+    <li><strong>Why:</strong> To check whether your personal email address appears in any known breach</li>
+    <li><strong>This only happens if you explicitly click "Check if I was exposed."</strong> It is never sent automatically.</li>
+    <li><a href="https://haveibeenpwned.com/Privacy">HaveIBeenPwned's privacy policy</a></li>
+  </ul>
+
+  <hr>
+
+  <h2>Gmail permissions</h2>
+  <table>
+    <tr>
+      <th>Scope</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>gmail.readonly</td>
+      <td>Read the currently open email for analysis</td>
+    </tr>
+    <tr>
+      <td>gmail.addons.execute</td>
+      <td>Run as a Gmail Add-on</td>
+    </tr>
+    <tr>
+      <td>script.external_request</td>
+      <td>Send analysis requests to the backend and third-party services</td>
+    </tr>
+    <tr>
+      <td>userinfo.email</td>
+      <td>Identify your account for the "Check if I was exposed" feature</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h2>Data retention</h2>
+  <ul>
+    <li><strong>Email content:</strong> Never stored. Processed in memory and discarded after each analysis.</li>
+    <li><strong>Analysis results:</strong> Displayed in the sidebar and discarded. Not logged or stored.</li>
+    <li><strong>Your email address:</strong> Only used if you initiate the breach check. Not stored.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this policy, contact: <a href="mailto:nisim.yuval41@gmail.com">nisim.yuval41@gmail.com</a></p>
+
+</body>
+</html>
